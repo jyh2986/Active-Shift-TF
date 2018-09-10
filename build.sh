@@ -3,7 +3,7 @@ TF_INC=$(python -c 'import tensorflow as tf; print(tf.sysconfig.get_include())')
 TF_LIB=$(python -c 'import tensorflow as tf; print(tf.sysconfig.get_lib())')
 
 
-cp ./lib/cuda_config.h $TF_INC/tensorflow/stream_executor/cuda/
+#cp ./lib/cuda_config.h $TF_INC/tensorflow/stream_executor/cuda/
 
 nvcc -std=c++11 -ccbin=/usr/bin/g++-4.9 -c -o lib/active_shift2d.cu.o lib/active_shift2d.cu -D GOOGLE_CUDA=1 -x cu -Xcompiler -fPIC \
 -I $TF_INC \
