@@ -10,7 +10,7 @@ from tensorflow.python.platform import test
 import lib.active_shift2d_op as active_shift2d_op
 import os
 
-os.environ['CUDA_VISIBLE_DEVICES'] = '2'
+# os.environ['CUDA_VISIBLE_DEVICES'] = '2'
 
 N = 8
 Ci = 6
