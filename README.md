@@ -1,15 +1,33 @@
 
 
+
+
 # Active Shift Layer
 
 This repository contains the implementation for Active Shift Layer (ASL).
 
-Please see the paper [Constructing Fast Network through Deconstruction of Convolution](https://arxiv.org/abs/1806.07370). 
+Please see the paper [Constructing Fast Network through Deconstruction of Convolution](https://papers.nips.cc/paper/7835-constructing-fast-network-through-deconstruction-of-convolution.pdf). 
 
-This paper is accepted in NIPS 2018 as spotlight session.
+This paper is accepted in NIPS 2018 as spotlight session ([slide](https://github.com/jyh2986/Active-Shift/blob/publish_ASL/supplement/presentation_rev2.pdf), [poster](https://github.com/jyh2986/Active-Shift/blob/publish_ASL/supplement/poster_rev1.pdf))
 
 The code is based on [Tensorflow](https://www.tensorflow.org/)  
 Caffe implementation is also available at [ASL-Caffe](https://github.com/jyh2986/Active-Shift)
+
+## Introduction
+
+### Deconstruction 
+Naive spatial convolution can be deconstructed into a shift layer and a 1x1 convolution.
+
+This figure shows the basic concept of deconstruction.
+![Basic Concept](https://github.com/jyh2986/Active-Shift/blob/publish_ASL/supplement/deconstruction.PNG)
+
+
+
+### Active Shift Layer (ASL)
+For the efficient shift, we proposed active shift layer.
+  * Uses depthwise shift
+  * Introduced new shift parameters for each channel    
+  * New shift parameters(alpha, beta) are learnable
 
 ## Prerequisite
 
@@ -34,8 +52,6 @@ Note that this code is tested only in the environment decribed below. Mismatched
 
 2. run >python test_backward_ASL.py
     * You should get "OK" for 3 tests.
-
-
 
 ## Usage
 1. import lib.active_shift2d_op as active_shift2d_op
